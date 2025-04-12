@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { initDB } = require("../models/db_base");
 
 router.get("/", (req, res) => {
-  res.render("index", { title: "Home" });
+  res.render('index', { title: "Home" });
 });
 
 router.get("/init", (req, res) => {

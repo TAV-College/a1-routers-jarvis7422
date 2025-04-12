@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 // Router Imports
 const mainRouter = require("./routers/main.js");
-const bookRouter = require("./routers/books.js");
+const bookRouter = require("./routers/booksRouter.js");
 const port = process.env.PORT || 3000;
 
 // Create & Configure App
@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 
 // Load routers
 app.use("", mainRouter);
-app.use("", bookRouter);
+app.use("/books", bookRouter);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
